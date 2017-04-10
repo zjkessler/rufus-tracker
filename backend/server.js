@@ -18,10 +18,11 @@ app.use('/upgrades', require('./routes/upgrade-routes'));
 
 //DB connection
 mongoose.connect('mongodb://localhost/4runner', function () {
+	'use strict';
 	console.log('connected to database...');
 });
 
 
 app.listen(port, function () {
-	console.log(`listening on port ${port}...`);
+	console.log("listening on port " + port);
 });

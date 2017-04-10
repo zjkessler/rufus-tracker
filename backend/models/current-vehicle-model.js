@@ -1,44 +1,44 @@
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
 
 var vehicleSchema = new mongoose.Schema({
 	exterior: [{
 		roofrack: {
 			type: String,
-			default: "stock"
+			default: 'stock'
 		},
 		frontBumper: {
 			type: String,
-			default: "stock"
+			default: 'stock'
 		},
 		backBumper: {
 			type: String,
-			default: "stock"
+			default: 'stock'
 		},
 		wheels: {
 			type: String,
-			default: "stock"
+			default: 'stock'
 		},
 		rims: {
 			type: String,
-			default: "stock"
+			default: 'stock'
 		},
 		shocks: {
 			type: String,
-			default: "stock"
+			default: 'stock'
 		},
 		ladder: {
 			type: String,
-			default: "none"
+			default: 'none'
 		},
 		lightBar: {
 			type: String,
-			default: "none"
+			default: 'none'
 		},
 		other: {
 			type: String,
-			default: "none"
+			default: 'none'
 		}
 
 	}],
-	interior[]
-})
+	interior:[]
+});

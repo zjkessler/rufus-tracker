@@ -8,6 +8,6 @@ var upgradeItemSchema = new mongoose.Schema({
 	description: String,
 	price: Number,
 	image: String
-})
+});
 
 module.exports = mongoose.model("Upgrade", upgradeItemSchema);
