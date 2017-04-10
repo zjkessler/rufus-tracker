@@ -1,0 +1,16 @@
+body {
+	background: url("Assets/IMG_0229.JPG") no-repeat center center fixed;
+}
+
+button {
+	margin: 5px 0px 5px 0px;
+}
+
+.glyphicon {
+	font-size: 1em;
+}
+
+.panel-header button {
+	margin: -25px 5px 5px 0px;
+	font-size: 1.3em;
+}

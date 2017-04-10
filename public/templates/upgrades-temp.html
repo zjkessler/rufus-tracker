@@ -1,0 +1,85 @@
+<div class="col-sm-2 well">
+	<h3>Total Cost of Upgrades: </h3>
+	<h3>${{ total }}</h3>
+</div>
+<div class="col-md-6">
+
+	<div id=search-box class="well">
+		<form action="" class="form-group">
+			<label for="">Search for Upgrade:</label>
+			<input ng-model="searchUpgrades" class="form-control" type="text">
+
+		</form>
+
+	</div>
+	<div class="well panel panel-default" ng-repeat="item in upgrades | filter:searchUpgrades track by $index" ng-init="item.editing = false">
+
+		<div class="panel-header">
+
+			<h2 ng-if="!item.editing" class="panel-title"><a href="" ng-click="item.isCollapsed = !item.isCollapsed">{{ item.title }}</a></h2>
+
+			<button ng-click="deleteUpgrade(item, $index)" ng-show="!item.editing" class="pull-right btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove-sign"></span></button>
+
+			<button ng-click="item.editing = !item.editing" ng-if="!item.editing" class="pull-right btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></button>
+
+			<button ng-click="editUpgrades(item, $index)" ng-if="item.editing" class="pull-right btn btn-primary btn-sm"><span class="glyphicon glyphicon-save"></span></button>
+
+
+		</div>
+
+		<div uib-collapse="!item.isCollapsed">
+
+			<div class="panel-body">
+
+				<img class="img-thumbnail" ng-src="{{ item.image }}" alt="" ng-if="!item.editing">
+
+				<p ng-if="!item.editing">{{ item.description }}</p>
+
+				<h3 ng-if="!item.editing"> ${{ item.price }}</h3>
+				<form class="form-group" ng-if="item.editing">
+
+					<div>
+						<label class="" for="title">Item Name: </label>
+						<input class="form-control" type="text" name="title" placeholder="add Name here..." ng-model="item.title">
+					</div>
+					<div>
+						<label class="" for="desc">Description: </label>
+						<textarea class="form-control" name="desc" id="" cols="30" rows="10" placeholder="add description here..." ng-model="item.description"></textarea>
+					</div>
+					<div>
+						<label class="" for="image">Image URL: </label>
+						<input class="form-control" type="text" name="image" placeholder="add URL here..." ng-model="item.image">
+					</div>
+					<div>
+						<label class="" for="price">Price: </label>
+						<input class="form-control" type="number" name="price" placeholder="add price here..." ng-model="item.price">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-sm-4">
+
+	<form class="form-group well">
+		<h2>Add New Upgrade</h2>
+		<div>
+			<label class="" for="title">Item Name: </label>
+			<input class="form-control" type="text" name="title" placeholder="add Name here..." ng-model="newUpgrade.title">
+		</div>
+		<div>
+			<label class="" for="desc">Description: </label>
+			<textarea class="form-control" name="desc" id="" cols="30" rows="10" placeholder="add description here..." ng-model="newUpgrade.description"></textarea>
+		</div>
+		<div>
+			<label class="" for="image">Image URL: </label>
+			<input class="form-control" type="text" name="image" placeholder="add URL here..." ng-model="newUpgrade.image">
+		</div>
+		<div>
+			<label class="" for="price">Price: </label>
+			<input class="form-control" type="number" name="price" placeholder="add price here..." ng-model="newUpgrade.price">
+		</div>
+		<button class="btn btn-default btn-primary form-control" ng-click="addUpgrade(newUpgrade)">Submit</button>
+	</form>
+</div>
+</div>
