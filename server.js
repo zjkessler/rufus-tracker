@@ -17,7 +17,7 @@ app.use(express.static(path.join('./public/')));
 app.use('/upgrades', require('./backend/routes/upgrade-routes'));
 
 //DB connection
-if (env === development) {
+if (env === 'development') {
 	mongoose.connect('mongodb://localhost/4runner', function () {
 
 		console.log('connected to database...');
