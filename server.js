@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var mongoose = require('mongoose');
 var port = process.env.PORT || 9000;
-var mongoURI = mongodb: heroku_6x5bn9zt: 6 mmd0alhtfnhv0ccvmv3qs7agc @ds159050.mlab.com: 59050 / heroku_6x5bn9zt
+var mongoURI = 'mongodb: heroku_6x5bn9zt: 6 mmd0alhtfnhv0ccvmv3qs7agc @ds159050.mlab.com: 59050 / heroku_6x5bn9zt'
 
 app.use(bodyParser.json());
 
