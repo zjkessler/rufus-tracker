@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join('./public/')));
 
 //route\\
-app.use('/upgrades', require('.backend/routes/upgrade-routes'));
+app.use('/upgrades', require('./backend/routes/upgrade-routes'));
 
 //DB connection
 mongoose.connect(mongoURI || 'mongodb://localhost/4runner', function () {
