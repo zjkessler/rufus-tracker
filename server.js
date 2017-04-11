@@ -8,7 +8,7 @@ var port = process.env.PORT || 9000;
 app.use(bodyParser.json());
 
 //connect front end to back end\\
-app.use(express.static(path.join('../public/')));
+app.use(express.static(path.join('./public/')));
 
 // path for npm scripts\\
 //app.use('/scripts', express.static(__dirname + '/node_modules/'));
