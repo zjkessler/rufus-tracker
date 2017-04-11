@@ -10,11 +10,8 @@ app.use(bodyParser.json());
 //connect front end to back end\\
 app.use(express.static(path.join('./public/')));
 
-// path for npm scripts\\
-//app.use('/scripts', express.static(__dirname + '/node_modules/'));
-
 //route\\
-app.use('/upgrades', require('./routes/upgrade-routes'));
+app.use('/upgrades', require('.backend/routes/upgrade-routes'));
 
 //DB connection
 mongoose.connect('mongodb://localhost/4runner', function () {
