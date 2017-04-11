@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var mongoose = require('mongoose');
 var port = process.env.PORT || 9000;
+var mongoURI = mongodb: heroku_6x5bn9zt: 6 mmd0alhtfnhv0ccvmv3qs7agc @ds159050.mlab.com: 59050 / heroku_6x5bn9zt
 
 app.use(bodyParser.json());
 
@@ -14,7 +15,7 @@ app.use(express.static(path.join('./public/')));
 app.use('/upgrades', require('.backend/routes/upgrade-routes'));
 
 //DB connection
-mongoose.connect('mongodb://localhost/4runner', function () {
+mongoose.connect(mongoURI || 'mongodb://localhost/4runner', function () {
 	'use strict';
 	console.log('connected to database...');
 });
